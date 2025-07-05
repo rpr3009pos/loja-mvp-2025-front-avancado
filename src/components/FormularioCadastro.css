@@ -1,0 +1,76 @@
+.form-container {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(189, 17, 17, 0.06);
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  color: #2c3e50;
+}
+
+.form-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #1f3f5b;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.form-control {
+  flex: 1 1 48%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control.full {
+  flex: 1 1 100%;
+}
+
+label {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #3a3a3a;
+}
+
+.input-with-icon {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccd6dd;
+  border-radius: 8px;
+  background-color: #f9fbfc;
+  padding: 0.6rem 0.8rem;
+  transition: border-color 0.3s;
+}
+
+.input-with-icon:focus-within {
+  border-color: #1473c7;
+}
+
+.input-with-icon svg {
+  margin-right: 0.6rem;
+  font-size: 1.1rem;
+  color: #50a2e9;
+}
+
+.input-with-icon input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background-color: transparent;
+  padding: 0.5rem 0;
+}
+
+/* Fallback para inputs sem ícones */
+form input:not(.input-with-icon input) {
+  padding: 0.8rem;
+  border: 1px solid #ccd6dd;
+  border-radius: 8px;
+  font

@@ -1,0 +1,123 @@
+.site-header {
+  background-color: #1a1a1a;
+  padding: 15px 20px;
+  color: white;
+  position: relative;
+  z-index: 10;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  font-size: 2rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.nav-links.desktop {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.nav-links.mobile {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  width: max-content;
+  z-index: 99;
+}
+
+.nav-links.mobile a {
+  color: #1a1a1a;
+  font-weight: 600;
+  padding: 6px 0;
+}
+
+.badge {
+  background-color: #e74c3c;
+  color: white;
+  font-size: 0.7rem;
+  padding: 3px 7px;
+  border-radius: 50%;
+  margin-left: 8px;
+  display: inline-block;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 768px) {
+  .nav-links.desktop {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-container {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* Ajuste extra para visualizações muito estreitas */
+@media (max-width: 420px) {
+  .nav-links.mobile {
+    top: 55px;
+    right: 10px;
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .menu-toggle {
+    font-size: 1.6rem;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+}

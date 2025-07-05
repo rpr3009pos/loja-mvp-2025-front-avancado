@@ -1,0 +1,252 @@
+:root {
+  --primary-bg: #ffffff;
+  --primary-text: #2c3e50;
+  --border-color: #eaeaea;
+  --accent-green: #27ae60;
+  --accent-red: #e74c3c;
+  --accent-red-hover: #c0392b;
+  --accent-gray: #555;
+  --accent-gray-hover: #333;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  --transition: all 0.3s ease;
+}
+
+.carrinho-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--primary-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--primary-text);
+}
+
+.carrinho-container h2 {
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.carrinho-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-carrinho {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.item-titulo {
+  font-weight: 600;
+  font-size: 1.05rem;
+  word-break: break-word;
+}
+
+.item-preco {
+  font-size: 1rem;
+  color: var(--accent-green);
+  min-width: 80px;
+  text-align: right;
+}
+
+.botao-remover {
+  background-color: var(--accent-red);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.botao-remover:hover,
+.botao-remover:focus-visible {
+  background-color: var(--accent-red-hover);
+  outline: none;
+}
+
+.total-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--border-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.botao-esvaziar {
+  margin-top: 1.5rem;
+  background-color: var(--accent-gray);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  display: block;
+  width: 100%;
+  transition: var(--transition);
+}
+
+.botao-esvaziar:hover,
+.botao-esvaziar:focus-visible {
+  background-color: var(--accent-gray-hover);
+  outline: none;
+}
+
+/* Efeito visual ao remover item */
+.item-removendo {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+@media (max-width: 768px) {
+  .carrinho-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .item-carrinho {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "titulo titulo"
+      "preco botao";
+  }
+
+  .item-titulo {
+    grid-area: titulo;
+  }
+
+  .item-preco {
+    grid-area: preco;
+    text-align: left;
+  }
+
+  .botao-remover {
+    grid-area: botao;
+    justify-self: end;
+  }
+
+  .total-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carrinho-container {
+    padding: 1rem;
+  }
+  
+  .item-preco,
+  .botao-remover {
+    font-size: 0.9rem;
+  }
+}
+
+.quantidade-controle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.quantidade-controle button {
+  padding: 4px 12px;
+  font-size: 1.1rem;
+  background-color: #eee;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.quantidade-controle button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.quantidade-controle button:hover:not(:disabled),
+.quantidade-controle button:focus-visible {
+  background-color: #ddd;
+  outline: none;
+}
+
+.quantidade-controle span {
+  font-size: 1rem;
+  font-weight: 500;
+  min-width: 28px;
+  text-align: center;
+}
+
+.item-preco-unitario,
+.item-subtotal {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 4px 0;
+}
+
+.item-carrinho img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.botoes-carrinho {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+/* Botão unificado para links e ações */
+.botao-padrao {
+  background-color: var(--accent-gray);
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.botao-padrao:hover,
+.botao-padrao:focus-visible {
+  background-color: var(--accent-gray-hover);
+  outline: none;
+}
+
+/* Estilo opcional para ícone → */
+.cta-icon {
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+/* Torna links iguais a botões mesmo visualmente */
+.botao-padrao:link,
+.botao-padrao:visited {
+  color: white;
+}

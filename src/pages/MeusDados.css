@@ -1,0 +1,59 @@
+.meus-dados-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem 2.5rem;
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  color: #2c3e50;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.meus-dados-container:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.meus-dados-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1a202c;
+}
+
+.meus-dados-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.meus-dados-container li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 1.05rem;
+}
+
+.meus-dados-container li strong {
+  flex: 0 0 130px;
+  font-weight: 600;
+  color: #333;
+}
+
+.meus-dados-container input {
+  flex: 1;
+  padding: 6
+
+  .botoes-salvar {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .botoes-salvar {
+    text-align: center;
+  }
+}
